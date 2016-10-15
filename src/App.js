@@ -10,14 +10,15 @@ import './App.css';
  * Component API available to us which also
  * includes the Life Cycle Methods.
  *
- * More Info: https://facebook.github.io/react/docs/component-api.html
+ * https://facebook.github.io/react/docs/component-api.html
  */
 class App extends React.Component {
 
   static childContextTypes = {
     myRandomContextString: React.PropTypes.string
-  }
+  };
 
+  // Grab the child context so that we can use in any component
   getChildContext() {
     return {
       myRandomContextString: 'I am Context hear me Roar!!!'
@@ -35,7 +36,7 @@ class App extends React.Component {
     }
   }
 
-  /** [Mounting Life Cycle Methods] **/
+  /******* [Mounting Life Cycle Methods] *******/
 
   // What do we want to happen BEFORE the component is mounting
   componentWillMount() {
@@ -47,14 +48,14 @@ class App extends React.Component {
     console.log('componentDidMount');
   }
 
-  /** [Updating Life Cycle Methods] **/
+  /******* [Updating Life Cycle Methods] *******/
 
   /**
    * Will the component receive props? What do we want to do with
    * them when the component is rendered or updates?
    */
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillRecieveProps', nextProps);
+    console.log('componentWillRecieveProps');
   }
 
   /**
@@ -65,7 +66,7 @@ class App extends React.Component {
    * We use this life cycle method to avoid un-necessary re-renders
    */
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate', nextProps, nextState);
+    console.log('shouldComponentUpdate');
     return nextProps.isReactCool !== this.state.isReactCool;
   }
 
@@ -78,7 +79,7 @@ class App extends React.Component {
    * before an update occurs.
    */
   componentWillUpdate(nextProps, nextState) {
-    console.log('componentWillUpdate', nextProps, nextState);
+    console.log('componentWillUpdate');
   }
 
   /**
@@ -90,10 +91,10 @@ class App extends React.Component {
    * when the component has been updated.
    */
   componentDidUpdate(nextProps, nextState) {
-    console.log('componentDidUpdate', nextProps, nextState);
+    console.log('componentDidUpdate');
   }
 
-  /** [Unmounting Life Cycle Methods] **/
+  /******* [Unmounting Life Cycle Methods] *******/
 
   /**
    * What do we want have happen when the component
@@ -120,7 +121,7 @@ class App extends React.Component {
    */
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{border: '2px solid blue'}}>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>

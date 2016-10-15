@@ -23,7 +23,7 @@ class NameComponent extends React.Component {
     const { currentNumber } = this.props;
 
     return (
-      <div>
+      <div style={{border: '2px solid purple'}}>
         <p>I am Name App!</p>
         <p>The props passed in: </p>
         <p>What is our current number? {currentNumber}</p>

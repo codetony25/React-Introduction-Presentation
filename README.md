@@ -11,6 +11,7 @@
 - Adam Hupp implemented an XHP-like concept for JavaScript, written in Haskell. This system enabled you to write the following inside a JavaScript file which is how JSX came into existence now.
 
 Reference: [https://facebook.github.io/react/blog/2016/09/28/our-first-50000-stars.html]
+Second Reference: [http://thenewstack.io/javascripts-history-and-how-it-led-to-reactjs/]
 
 ## What is React?
 - React is just the "View" layer, and they said it is the "V" in MVC. Which means that it doesn't make assumptions about the rest of your techonology stack. This allows us to develop and find which technology best fit the project that we are building.
@@ -32,7 +33,7 @@ Reference: [https://facebook.github.io/react/docs/why-react.html]
 
 ## Declarative VS Imperative
 - React is Declarative, which makes it very easy to maintain and reason with, but what is the difference between declarative and imperative anyways?
-- Imperative is more telling what you want the code to do, For example:
+- Imperative programming is more of you coding in a way where creating step by step instructions of how you want your program to work, For example:
 ```js
 let name = 'Tony',
   friends = ['Peter', 'Marcello', 'Carl', 'Eric', 'SJ'],
@@ -52,8 +53,8 @@ else {
 
 return description;
 ```
-- So imperative is more like doing each step at a time to acheieve your problem. Eventually if you keep having code like this, it will become very difficult to maintain and read.
-- Declarative is more of what you want the program to do for you. For example:
+- So imperative is more like doing each step at a time to acheieve your solution. Eventually if you keep having code like this, it will become very difficult to maintain and read.
+- Declarative is more of what you want the program to do for you, it's about describing what you're trying to achieve. For example:
 ```js
 let name = 'Tony',
   friends = ['Peter', 'Marcello', 'Carl', 'Eric', 'SJ'],

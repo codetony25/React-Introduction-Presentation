@@ -34,13 +34,13 @@ class NumberComponent extends React.Component {
     this.setState({
       currentNumber: decrementedNumber
     });
-  }
+  };
 
   render() {
     const { isReactAwesome, isTonyAwesome } = this.props;
 
     return (
-      <div>
+      <div style={{border: '2px solid gold'}}>
         <p>I am Number App!</p>
         <p>The props passed in: </p>
         <p>Is React Awesome? {isReactAwesome}</p>
