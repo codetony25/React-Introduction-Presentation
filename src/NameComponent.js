@@ -34,6 +34,7 @@ class NameComponent extends React.Component {
           onChange={this.handleNameChange}
         />
         <h1>Is Tony Awesome?</h1>
+        {/* Inner Component Function Example IFEE */}
         {(() => {
           if (this.props.isTonyAwesome) {
             return <h3>Tony is awesome!</h3>;

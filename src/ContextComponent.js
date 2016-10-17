@@ -14,15 +14,21 @@ class ContextComponent extends React.Component {
     this.state = { pokemonData: '' }
   }
 
+  // Example on how to fetch data from an API.
   componentDidMount() {
-    fetch('http://pokeapi.co/api/v2/pokemon/4/').then((response) => {
+    fetch('http://pokeapi.co/api/v2/pokemon/4/')
+      .then((response) => {
       return response.json().catch(error => {
         return {};
       });
-    }).then(data => {
+    })
+      .then(data => {
       console.log('data', data);
       this.setState({ pokemonData: data })
     })
+
+    // Refs example
+    console.log('refs', this.refs.myContextComponent);
   }
 
   renderPokemonData = () => {
@@ -46,7 +52,7 @@ class ContextComponent extends React.Component {
 
   render() {
     return (
-      <div style={{border: '2px solid green'}}>
+      <div ref="myContextComponent" style={{border: '2px solid green'}}>
         <h1>I am the Context Component!</h1>
         <h3>
           The context I received globally

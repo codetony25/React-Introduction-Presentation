@@ -35,39 +35,34 @@ Reference: [https://facebook.github.io/react/docs/why-react.html]
 - React is Declarative, which makes it very easy to maintain and reason with, but what is the difference between declarative and imperative anyways?
 - Imperative programming is more of you coding in a way where creating step by step instructions of how you want your program to work, For example:
 ```js
-let name = 'Tony',
-  friends = ['Peter', 'Marcello', 'Carl', 'Eric', 'SJ'],
-  friendCount = friends.length,
-  description = '';
-
-if (name === 'Tony') {
-  description = `${name} friends are`;
-  
-  for (var i = 0; i < friendCount; i++) {
-    description += ` ${friends[i]}, `
+function double (arr) {
+  let results = []
+  for (let i = 0; i < arr.length; i++){
+    results.push(arr[i] * 2)
   }
+  return results
 }
-else {
-  description = `You're not Tony!`;
+```
+```js
+function add (arr) {
+  let result = 0
+  for (let i = 0; i < arr.length; i++){
+    result += arr[i]
+  }
+  return result
 }
-
-return description;
 ```
 - So imperative is more like doing each step at a time to acheieve your solution. Eventually if you keep having code like this, it will become very difficult to maintain and read.
 - Declarative is more of what you want the program to do for you, it's about describing what you're trying to achieve. For example:
 ```js
-let name = 'Tony',
-  friends = ['Peter', 'Marcello', 'Carl', 'Eric', 'SJ'],
-  description = '';
-
-if (name.includes('Tony is Awesome')) {
-  description = `${name} friends are ${friends.toString()}`;
+function double (arr) {
+  return arr.map((item) => item * 2)
 }
-else {
-  description = `You're not Tony!`
+```
+```js
+function add (arr) {
+  return arr.reduce((prev, current) => prev + current, 0)
 }
-
-return description;
 ```
 - We want our code to be Declarative as much as possible because it is better to understand it. After all, we are human and we want our code to be human readable.
 
@@ -90,4 +85,3 @@ return description;
 - Why do developers use server side rendering anyways? The main two things are: It's faster and its better for SEO. But wait, didn't Google say that they are able to crawl ReactJS applications without a problem? That's true but what about the other Search Engines like Bing, Yahoo, and so on? The thing is that we're not sure what Search Engines are able to crawl our web application or not.
 - With server side rendering, you're initial server request is made and it renders out the entire DOM string, layout, css, javascript, and content. After that point your client-side will take over.
 - There are some trade-offs to using Server Side Rendering: It is difficult to setting up your React Application to use server side rendering. You really have to understand the concept of server-side rendering and you will run into issues where there are just some things your browser will understand like the global `window` object, but your server-side will not understand the global `window` so that makes it even harder because we have to include extra code.
-  

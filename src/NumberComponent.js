@@ -7,14 +7,13 @@ class NumberComponent extends React.Component {
     super(props);
 
     this.state = {
-      isNumberComponent: true,
       isHeaderVisible: true,
       currentNumber: 1
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('NumberComponent: componentWillRecieveProps', nextProps);
+    console.log('NumberComponent: componentWillRecieveProps');
   }
 
   // Never mutate state directly!
